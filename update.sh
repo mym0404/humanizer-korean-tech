@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Humanize KR — 업데이트 감지 + 자동 적용
+# Humanizer Korean Tech — 업데이트 감지 + 자동 적용
 # upstream(git)을 확인해 새 커밋이 있으면 fast-forward pull 후 install.sh를 재적용한다.
 # 심링크 설치는 pull만으로도 내용이 반영되지만, 신규 스킬/에이전트/구조 변경까지 확실히
 # 연결하려고 install.sh를 다시 실행한다(멱등).

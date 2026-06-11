@@ -22,7 +22,7 @@ PROJECT_ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 
 # v1.6 module location
 V1_DIR = os.path.join(
-    PROJECT_ROOT, ".claude", "skills", "humanize-korean", "references"
+    PROJECT_ROOT, ".claude", "skills", "humanizer-korean-tech", "references"
 )
 sys.path.insert(0, V1_DIR)
 sys.path.insert(0, HERE)

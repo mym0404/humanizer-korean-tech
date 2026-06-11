@@ -1,4 +1,4 @@
-# Humanize KR Scholarship Reference (v2.0)
+# Humanizer Korean Tech Scholarship Reference (v2.0)
 
 > **외부 SSOT** — 본진 분류 체계(`references/ai-tell-taxonomy.md`)는 패턴 행마다 한 줄 메타(`source_short`)로 이 파일을 가리킨다. 학술 출처 전문(full text)은 본 파일에 보존하여 SSOT 룰북의 슬림성을 해치지 않는다.
 >

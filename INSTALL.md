@@ -1,6 +1,6 @@
 # 설치 가이드 (Install)
 
-Humanize KR은 **Claude Code**와 **OpenAI Codex CLI**, **Gemini CLI(Antigravity)** 에서 전역으로 쓸 수 있습니다.
+Humanizer Korean Tech은 **Claude Code**와 **OpenAI Codex CLI**, **Gemini CLI(Antigravity)** 에서 전역으로 쓸 수 있습니다.
 
 | 도구 | 모드 | 설치 방법 |
 |---|---|---|
@@ -19,24 +19,24 @@ Humanize KR은 **Claude Code**와 **OpenAI Codex CLI**, **Gemini CLI(Antigravity
 Claude Code 세션에서:
 
 ```
-/plugin marketplace add epoko77-ai/im-not-ai
-/plugin install humanize-korean@im-not-ai
+/plugin marketplace add mym0404/humanizer-korean-tech
+/plugin install humanizer-korean-tech@humanizer-korean-tech
 ```
 
-- 설치 후 새 세션에서 `/humanize-korean`(또는 `/humanize`, `/humanize-redo`), 혹은 자연어 트리거("이 글 AI 티 없애줘")로 발동.
-- 업데이트: `/plugin marketplace update im-not-ai` 후 `/plugin update humanize-korean`.
-- 제거: `/plugin uninstall humanize-korean`.
-- 구성요소: 스킬 3개(humanize-korean·humanize·humanize-redo) + 서브에이전트 12개가 함께 설치됩니다.
+- 설치 후 새 세션에서 `/humanizer-korean-tech`(또는 `/humanize`, `/humanize-redo`), 혹은 자연어 트리거("이 글 AI 티 없애줘")로 발동.
+- 업데이트: `/plugin marketplace update humanizer-korean-tech` 후 `/plugin update humanizer-korean-tech`.
+- 제거: `/plugin uninstall humanizer-korean-tech`.
+- 구성요소: 스킬 3개(humanizer-korean-tech·humanize·humanize-redo) + 서브에이전트 12개가 함께 설치됩니다.
 
 ### 방법 ② 클론 + 스크립트
 
 ```bash
-git clone https://github.com/epoko77-ai/im-not-ai.git
-cd im-not-ai
+git clone https://github.com/mym0404/humanizer-korean-tech.git
+cd humanizer-korean-tech
 ./install.sh --claude-only
 ```
 
-`~/.claude/skills/`에 스킬 3개, `~/.claude/agents/`에 에이전트 12개를 **심링크**합니다(저장소를 수정하면 즉시 반영). 새 세션에서 `/humanize-korean`.
+`~/.claude/skills/`에 스킬 3개, `~/.claude/agents/`에 에이전트 12개를 **심링크**합니다(저장소를 수정하면 즉시 반영). 새 세션에서 `/humanizer-korean-tech`.
 
 ---
 
@@ -45,20 +45,20 @@ cd im-not-ai
 Codex 0.121.0 이상(1급 Skills 지원)이 필요합니다.
 
 ```bash
-git clone https://github.com/epoko77-ai/im-not-ai.git
-cd im-not-ai
+git clone https://github.com/mym0404/humanizer-korean-tech.git
+cd humanizer-korean-tech
 ./install.sh --codex-only
 ```
 
-`~/.codex/skills/humanize-korean`에 Fast Path 스킬을 심링크합니다. Codex에서 `$humanize-korean`으로 발동하거나, `/skills` 메뉴에서 선택하세요.
+`~/.codex/skills/humanizer-korean-tech`에 Fast Path 스킬을 심링크합니다. Codex에서 `$humanizer-korean-tech`로 발동하거나, `/skills` 메뉴에서 선택하세요.
 
 ---
 
 ## 한 번에 양쪽 모두 (Claude + Codex + Gemini)
 
 ```bash
-git clone https://github.com/epoko77-ai/im-not-ai.git
-cd im-not-ai
+git clone https://github.com/mym0404/humanizer-korean-tech.git
+cd humanizer-korean-tech
 ./install.sh            # 설치된 claude/codex/gemini를 자동 감지해 각각 연결
 ```
 
@@ -85,17 +85,17 @@ cd im-not-ai
   - `./update.sh --check` — 감지만(적용 안 함). 최신이면 종료코드 `0`, 업데이트 있으면 `10`.
   - `--copy`로 설치했다면 `./update.sh --copy --force`.
 - **수동** — `git pull`만 해도 심링크라 내용은 반영됩니다(신규 파일 연결은 `./install.sh` 한 번 더).
-- **마켓플레이스 설치** — Claude Code가 갱신을 관리합니다: `/plugin marketplace update im-not-ai` → `/plugin update humanize-korean`.
+- **마켓플레이스 설치** — Claude Code가 갱신을 관리합니다: `/plugin marketplace update humanizer-korean-tech` → `/plugin update humanizer-korean-tech`.
 - **주기적 무인 업데이트 (opt-in)** — 완전 자동 갱신을 원하면 cron/launchd로 `update.sh`를 거세요. 예(매주 월 09:00, 감지 시 적용):
   ```cron
-  0 9 * * 1  cd /path/to/im-not-ai && ./update.sh >> ~/.humanize-update.log 2>&1
+  0 9 * * 1  cd /path/to/humanizer-korean-tech && ./update.sh >> ~/.humanize-update.log 2>&1
   ```
   알림만 원하면 `./update.sh --check`를 사용하세요. ⚠️ 자동 적용은 upstream 코드를 자동으로 받아 연결하므로 **신뢰하는 저장소에만** 거세요.
 
 ## 제거
 
 - **스크립트 설치** — `./uninstall.sh`: 이 저장소를 가리키는 심링크만 제거(직접 둔 파일·`.bak.*`·`--copy` 설치본은 보존).
-- **마켓플레이스** — `/plugin uninstall humanize-korean`.
+- **마켓플레이스** — `/plugin uninstall humanizer-korean-tech`.
 
 ---
 
@@ -122,21 +122,21 @@ Gemini CLI 0.14.0 이상이 필요합니다.
 ### 방법 ① 원격 설치 — 클론 불필요 (권장)
 
 ```bash
-gemini extensions install https://github.com/epoko77-ai/im-not-ai.git
+gemini extensions install https://github.com/mym0404/humanizer-korean-tech.git
 ```
 
-- 설치 후 새 세션에서 `/humanize-korean`(또는 `/humanize`), 혹은 자연어 트리거("이 글 AI 티 없애줘")로 발동.
-- 업데이트: `gemini extensions update im-not-ai`.
-- 제거: `gemini extensions uninstall im-not-ai`.
+- 설치 후 새 세션에서 `/humanizer-korean-tech`(또는 `/humanize`), 혹은 자연어 트리거("이 글 AI 티 없애줘")로 발동.
+- 업데이트: `gemini extensions update humanizer-korean-tech`.
+- 제거: `gemini extensions uninstall humanizer-korean-tech`.
 
 ### 방법 ② 클론 + 스크립트
 
 ```bash
-git clone https://github.com/epoko77-ai/im-not-ai.git
-cd im-not-ai
+git clone https://github.com/mym0404/humanizer-korean-tech.git
+cd humanizer-korean-tech
 ./install.sh --gemini-only
 ```
 
-`gemini extensions link`로 저장소를 직접 링크합니다(저장소 수정 시 즉시 반영). 새 세션에서 `/humanize-korean`.
+`gemini extensions link`로 저장소를 직접 링크합니다(저장소 수정 시 즉시 반영). 새 세션에서 `/humanizer-korean-tech`.
 
 > Gemini는 **Fast(단일 호출) 모드만** 제공합니다. 정밀 strict 5인 파이프라인은 Claude Code 전용.

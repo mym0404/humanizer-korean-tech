@@ -1,5 +1,5 @@
 prompt = """
-아래 한글 텍스트를 GEMINI.md에 정의된 Humanize Korean 룰에 따라 윤문하세요.
+아래 한글 텍스트를 GEMINI.md에 정의된 Humanizer Korean Tech 룰에 따라 윤문하세요.
 
 절차:
 1. 첫 300자로 장르를 추정합니다 (칼럼 | 리포트 | 블로그 | 공적).

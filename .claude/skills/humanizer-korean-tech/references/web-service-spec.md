@@ -1,6 +1,6 @@
-# Humanize KR 웹 서비스 스펙 (Phase 5에서만 로드)
+# Humanizer Korean Tech 웹 서비스 스펙 (Phase 5에서만 로드)
 
-Humanize Korean 파이프라인을 일반 사용자용 웹앱으로 확장할 때 아키텍트가 따르는 참조. 기본 윤문 파이프라인이 안정화된 뒤에만 읽는다.
+Humanizer Korean Tech 파이프라인을 일반 사용자용 웹앱으로 확장할 때 아키텍트가 따르는 참조. 기본 윤문 파이프라인이 안정화된 뒤에만 읽는다.
 
 ## 목차
 

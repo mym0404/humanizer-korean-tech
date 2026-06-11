@@ -1,4 +1,4 @@
-# Humanize KR — AI 한글 티 제거 (Gemini CLI Extension)
+# Humanizer Korean Tech — AI 한글 티 제거 (Gemini CLI Extension)
 
 **v1.5 · Fast(monolith) 모드 전용** — Gemini CLI에서 한 번의 대화로 탐지·윤문·자체검증을 일괄 처리합니다.
 정밀 strict 5인 파이프라인은 Claude Code 전용입니다.
@@ -11,8 +11,8 @@ AI(ChatGPT·Claude·Gemini 등)가 쓴 한글 텍스트를 "사람이 쓴 글처
 
 ## 커스텀 명령
 
-- `/humanize-korean [텍스트]` — 메인 윤문 명령
-- `/humanize [텍스트]` — `/humanize-korean`과 동일
+- `/humanizer-korean-tech [텍스트]` — 메인 윤문 명령
+- `/humanize [텍스트]` — `/humanizer-korean-tech`과 동일
 - `/humanize-redo [조정 지시]` — 2차 윤문 / 부분 재실행
 
 자연어 트리거도 동작합니다: "이 글 AI 티 없애줘", "AI 윤문", "ChatGPT 티 제거", "번역투 고쳐", "사람이 쓴 것처럼".
@@ -175,6 +175,6 @@ AI(ChatGPT·Claude·Gemini 등)가 쓴 한글 텍스트를 "사람이 쓴 글처
 
 ## 참고 자료
 
-- 분류 체계 본진: `.claude/skills/humanize-korean/references/ai-tell-taxonomy.md`
-- 윤문 처방: `.claude/skills/humanize-korean/references/rewriting-playbook.md`
-- 슬림 룰북: `.claude/skills/humanize-korean/references/quick-rules.md`
+- 분류 체계 본진: `.claude/skills/humanizer-korean-tech/references/ai-tell-taxonomy.md`
+- 윤문 처방: `.claude/skills/humanizer-korean-tech/references/rewriting-playbook.md`
+- 슬림 룰북: `.claude/skills/humanizer-korean-tech/references/quick-rules.md`

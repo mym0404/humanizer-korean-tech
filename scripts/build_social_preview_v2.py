@@ -27,6 +27,7 @@ F_BOLD = str(FONT_DIR / "Pretendard-Bold.otf")
 F_SEMI = str(FONT_DIR / "Pretendard-SemiBold.otf")
 F_MED = str(FONT_DIR / "Pretendard-Medium.otf")
 F_REG = str(FONT_DIR / "Pretendard-Regular.otf")
+FALLBACK_FONT = "/System/Library/Fonts/AppleSDGothicNeo.ttc"
 
 # Design tokens
 BG = "#F4EFE5"
@@ -47,7 +48,12 @@ W, H = 1280, 640
 
 
 def font(path: str, size: int) -> ImageFont.FreeTypeFont:
-    return ImageFont.truetype(path, size)
+    for candidate in (path, FALLBACK_FONT):
+        try:
+            return ImageFont.truetype(candidate, size)
+        except OSError:
+            continue
+    return ImageFont.load_default()
 
 
 def draw_text(d: ImageDraw.ImageDraw, xy, text: str, f, fill, anchor="la"):
@@ -79,11 +85,11 @@ def build():
     d = ImageDraw.Draw(img)
 
     # Header — 좌상단 제목 + 우상단 부제 2줄
-    f_title = font(F_BLACK, 80)
+    f_title = font(F_BLACK, 58)
     f_sub = font(F_MED, 22)
     f_sub_em = font(F_SEMI, 22)
 
-    draw_text(d, (72, 70), "im-not-ai", f_title, TITLE)
+    draw_text(d, (72, 70), "humanizer-korean-tech", f_title, TITLE)
     # 우상단 — 한글 AI 티 제거기
     sub_line1 = "한글 AI 티 제거기"
     sub_line2 = "v2.0 · 한국 번역학계 8유형 흡수"
@@ -168,7 +174,7 @@ def build():
     draw_text(d, (72, 590), "이근희 · 김정우 · 김도훈 · 김혜영 · Toral 2019", f_meta_sub, META)
 
     # 우측: github URL
-    draw_text(d, (W - 72, 590), "github.com/epoko77-ai/im-not-ai", f_link, LINK, anchor="ra")
+    draw_text(d, (W - 72, 590), "github.com/mym0404/humanizer-korean-tech", f_link, LINK, anchor="ra")
 
     # Save
     OUT.parent.mkdir(parents=True, exist_ok=True)

@@ -1,16 +1,16 @@
 {
-  "name": "im-not-ai",
+  "name": "humanizer-korean-tech",
   "owner": {
-    "name": "epoko77-ai"
+    "name": "mym0404"
   },
   "metadata": {
-    "description": "AI가 쓴 한글 텍스트를 사람이 쓴 글처럼 윤문하는 humanize-korean 스킬 마켓플레이스",
+    "description": "AI가 쓴 한글 텍스트를 사람이 쓴 글처럼 윤문하는 humanizer-korean-tech 스킬 마켓플레이스",
     "version": "1.5.0",
     "pluginRoot": "."
   },
   "plugins": [
     {
-      "name": "humanize-korean",
+      "name": "humanizer-korean-tech",
       "source": "./",
       "description": "AI가 쓴 한글 텍스트를 사람이 쓴 글처럼 윤문하는 오케스트레이터 스킬 + 서브에이전트 묶음 (Fast + strict).",
       "version": "1.5.0",

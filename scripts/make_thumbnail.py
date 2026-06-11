@@ -1,4 +1,4 @@
-"""Generate social preview thumbnail for im-not-ai.
+"""Generate social preview thumbnail for humanizer-korean-tech.
 
 Size 1280x640 (GitHub social preview recommended).
 Warm cream background, typographic minimalism with before/after exemplar.
@@ -9,6 +9,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 HOME = Path.home()
 FONT_DIR = HOME / "Library/Fonts"
+FALLBACK_FONT = "/System/Library/Fonts/AppleSDGothicNeo.ttc"
 OUT = Path(__file__).resolve().parent.parent / "assets" / "social-preview.png"
 OUT.parent.mkdir(parents=True, exist_ok=True)
 
@@ -23,7 +24,12 @@ def F(weight, size):
         "reg": "Pretendard-Regular.otf",
         "light": "Pretendard-Light.otf",
     }
-    return ImageFont.truetype(str(FONT_DIR / names[weight]), size)
+    for candidate in (str(FONT_DIR / names[weight]), FALLBACK_FONT):
+        try:
+            return ImageFont.truetype(candidate, size)
+        except OSError:
+            continue
+    return ImageFont.load_default()
 
 
 W, H = 1280, 640
@@ -41,7 +47,7 @@ d = ImageDraw.Draw(img)
 PAD = 72
 
 # ---------- Header ----------
-d.text((PAD, 56), "im-not-ai", font=F("black", 82), fill=INK)
+d.text((PAD, 76), "humanizer-korean-tech", font=F("black", 58), fill=INK)
 
 subtitle = "한글 AI 티 제거기"
 sub_f = F("med", 26)
@@ -148,7 +154,7 @@ d.text((badge_x + badge_w + 32, stat_y + 12), meta, font=meta_f, fill=MUTED)
 
 
 # ---------- Footer: URL ----------
-url = "github.com/epoko77-ai/im-not-ai"
+url = "github.com/mym0404/humanizer-korean-tech"
 url_f = F("semi", 22)
 uw = d.textlength(url, font=url_f)
 d.text((W - PAD - uw, H - 50), url, font=url_f, fill=INK)

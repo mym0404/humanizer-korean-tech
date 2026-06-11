@@ -1,13 +1,13 @@
 ---
 name: humanize-redo
-description: 가장 최근 윤문 결과를 2차로 다시 다듬는다 — 특정 카테고리·문단·강도 조정도 가능. humanize-korean strict 윤문(Phase B)을 기존 run_id에 재실행해 잔존 finding을 처리한다. 트리거 — "/humanize-redo".
+description: 가장 최근 윤문 결과를 2차로 다시 다듬는다 — 특정 카테고리·문단·강도 조정도 가능. humanizer-korean-tech strict 윤문(Phase B)을 기존 run_id에 재실행해 잔존 finding을 처리한다. 트리거 — "/humanize-redo".
 argument-hint: "[조정 지시 — 예: \"번역투만 다시\" \"이 문단만\" \"강도 낮춰\"]"
 disable-model-invocation: true
 ---
 
 # /humanize-redo — 2차 윤문 / 부분 재실행
 
-cwd 기준 가장 최근 `_workspace/{run_id}/`를 찾아 `humanize-korean` 스킬의 strict 윤문(Phase B)부터 재호출한다.
+cwd 기준 가장 최근 `_workspace/{run_id}/`를 찾아 `humanizer-korean-tech` 스킬의 strict 윤문(Phase B)부터 재호출한다.
 
 ## 사용자 지시
 $ARGUMENTS
@@ -29,4 +29,4 @@ $ARGUMENTS
 
 ## 참고
 - 풀 파이프라인 신규 실행은 `/humanize`.
-- 분류 체계: `humanize-korean/references/ai-tell-taxonomy.md`
+- 분류 체계: `humanizer-korean-tech/references/ai-tell-taxonomy.md`

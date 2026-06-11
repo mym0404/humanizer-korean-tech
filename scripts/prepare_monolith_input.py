@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Humanize KR v1.6 — monolith input shim.
+"""Humanizer Korean Tech v1.6 — monolith input shim.
 
 Pre-processes user input by computing v1.6 quantitative metrics and
 prepending the result to the text the monolith agent reads. The monolith
@@ -39,10 +39,10 @@ from pathlib import Path
 # Resolve project layout. This file lives at:
 #   {project_root}/scripts/prepare_monolith_input.py
 # metrics.py is at:
-#   {project_root}/.claude/skills/humanize-korean/references/metrics.py
+#   {project_root}/.claude/skills/humanizer-korean-tech/references/metrics.py
 HERE = Path(__file__).resolve().parent
 PROJECT_ROOT = HERE.parent
-METRICS_DIR = PROJECT_ROOT / ".claude" / "skills" / "humanize-korean" / "references"
+METRICS_DIR = PROJECT_ROOT / ".claude" / "skills" / "humanizer-korean-tech" / "references"
 
 # Make metrics.py importable without polluting global state.
 sys.path.insert(0, str(METRICS_DIR))
@@ -183,7 +183,7 @@ def _render_combined(text: str, metrics_obj: dict | None) -> str:
 
 
 def main(argv: list[str] | None = None) -> int:
-    p = argparse.ArgumentParser(description="Humanize KR v1.6 monolith input shim")
+    p = argparse.ArgumentParser(description="Humanizer Korean Tech v1.6 monolith input shim")
     p.add_argument("--run-dir", help="Existing run directory (relative ok)")
     p.add_argument("--text", help="Inline text input (creates new run dir)")
     p.add_argument("--genre", default="essay", help="Genre hint (default: essay)")

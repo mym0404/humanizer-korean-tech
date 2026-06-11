@@ -1,4 +1,4 @@
-"""Humanize KR v2.0 quantitative metrics calculator.
+"""Humanizer Korean Tech v2.0 quantitative metrics calculator.
 
 Extends v1.6 metrics.py with post-editese 3축 (simplification·normalisation·
 interference) and 8 translation-type detection signals from the Korean
@@ -43,7 +43,7 @@ from typing import Any
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _PROJECT_ROOT = os.path.abspath(os.path.join(_HERE, "..", "..", ".."))
 _V1_METRICS_DIR = os.path.join(
-    _PROJECT_ROOT, ".claude", "skills", "humanize-korean", "references"
+    _PROJECT_ROOT, ".claude", "skills", "humanizer-korean-tech", "references"
 )
 if _V1_METRICS_DIR not in sys.path:
     sys.path.insert(0, _V1_METRICS_DIR)
@@ -705,7 +705,7 @@ def compute_all_v2(
 
 
 def _main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Humanize KR v2.0 metric runner")
+    parser = argparse.ArgumentParser(description="Humanizer Korean Tech v2.0 metric runner")
     parser.add_argument("--input", required=True, help="Input text file path")
     parser.add_argument("--genre", default="essay", help="essay/news/blog/qa/dialogue")
     parser.add_argument("--output", default=None, help="Output JSON path (optional)")

@@ -1,13 +1,13 @@
 ---
 name: humanize
-description: AI가 쓴 한글 텍스트를 자연스럽게 윤문하는 진입 명령. humanize-korean 파이프라인을 Fast 모드(기본)로 실행하고 `--strict`면 5인 파이프라인. 트리거 — "/humanize".
+description: AI가 쓴 한글 텍스트를 자연스럽게 윤문하는 진입 명령. humanizer-korean-tech 파이프라인을 Fast 모드(기본)로 실행하고 `--strict`면 5인 파이프라인. 트리거 — "/humanize".
 argument-hint: "[윤문할 텍스트 또는 파일 경로]"
 disable-model-invocation: true
 ---
 
 # /humanize — 한글 AI 티 제거
 
-`humanize-korean` 스킬을 발동해 인자로 전달된 한글 텍스트(또는 파일)에 윤문을 실행한다.
+`humanizer-korean-tech` 스킬을 발동해 인자로 전달된 한글 텍스트(또는 파일)에 윤문을 실행한다.
 
 ## 입력
 $ARGUMENTS
@@ -16,7 +16,7 @@ $ARGUMENTS
 1. 인자가 비면: "윤문할 텍스트를 붙여넣어 주세요" 안내 후 종료.
 2. 인자가 파일 경로(.txt/.md)면 `Read`로 본문 로드.
 3. 인자가 텍스트면 그대로 입력으로 사용.
-4. `humanize-korean` 스킬 SKILL.md 절차(Phase 0 → 결과 전달)를 따른다 — 기본 **Fast 모드**, `--strict` 시 strict 5인 파이프라인.
+4. `humanizer-korean-tech` 스킬 SKILL.md 절차(Phase 0 → 결과 전달)를 따른다 — 기본 **Fast 모드**, `--strict` 시 strict 5인 파이프라인.
 5. 결과 전달:
    - 한 줄 상태(변경률 / 등급 / 자체검증 통과)
    - 윤문본 본문(마크다운 블록)
@@ -31,5 +31,5 @@ $ARGUMENTS
 - `--strict` — 5인 파이프라인 강제
 
 ## 참고
-- 분류 체계: `humanize-korean/references/ai-tell-taxonomy.md`
-- 윤문 처방: `humanize-korean/references/rewriting-playbook.md`
+- 분류 체계: `humanizer-korean-tech/references/ai-tell-taxonomy.md`
+- 윤문 처방: `humanizer-korean-tech/references/rewriting-playbook.md`
